@@ -9,11 +9,8 @@
   "author": "Aleks",
   "license": "ISC",
   "dependencies": {
-    "async-request": "^1.2.0",
     "consign": "^0.1.6",
     "htmlparser2": "^3.9.2",
-    "node-fetch": "^2.1.2",
-    "node-rest-client": "^3.1.0",
     "node-telegram-bot-api": "^0.30.0",
     "nodemon": "^1.18.1",
     "request": "^2.87.0",

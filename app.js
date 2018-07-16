@@ -1,4 +1,4 @@
-process.env["NTBA_FIX_319"] = 1;
+process.env["NTBA_FIX_319"] = 1; //para tirar aviso de erro ao carregar node-telegram
 var TelegramBot = require('node-telegram-bot-api');
 const token = '';
 const bot = new TelegramBot(token, {polling: true});
