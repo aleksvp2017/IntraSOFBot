@@ -3,6 +3,11 @@ if (!process.env.TOKEN){
     return;
 }
 
+if (!process.env.URLRESTWIKI){
+    console.log("Por favor, configure variável de ambiente URLRESTWIKI com a url de busca REST");
+    return;
+}
+
 process.env["NTBA_FIX_319"] = 1; //para tirar aviso de erro ao carregar node-telegram
 var TelegramBot = require('node-telegram-bot-api');
 const bot = new TelegramBot(process.env.TOKEN, {filepath: false, polling: true}); //filepath: false melhoria de performance sugerida pelo desenv
