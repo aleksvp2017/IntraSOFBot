@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Executar Programa",
-            "program": "${workspaceFolder}\\index.js"
+            "program": "${workspaceFolder}\\app.js"
         }
     ]
 }

@@ -1,10 +1,10 @@
 class ParserHTML{
 
-    async obterPaginas(html){
+    obterPaginas(html){
         var htmlparser = require("htmlparser2");
         var select = require('soupselect').select;
         var linksFinais = [];
-        var handler = await new htmlparser.DomHandler(
+        var handler = new htmlparser.DomHandler(
             function (error, dom) {
                 if (error){
 
@@ -15,12 +15,18 @@ class ParserHTML{
                     linksDosElementos.forEach((linkDosElementos) => {
                         linksFinais.push('https://intrasof/' + linkDosElementos.attribs['href']);
                     });
+                    var currentPage = select(dom, '.currentPage');
+                    var proximasPaginas = select(elementosResultantesDaBusca, 'a');
+                    if (proximasPaginas){
+
+                    }
+
                     return linksFinais;
                 }
         });
-        var parser = await new htmlparser.Parser(handler);        
+        var parser = new htmlparser.Parser(handler);        
         parser.write(html);
-        await parser.end();
+        parser.end();
         return linksFinais;
     }   
 
@@ -31,8 +37,3 @@ class ParserHTML{
 module.exports = () => {
     return new ParserHTML();
 }
-
-/*let html = "<html></html>";
-
-let parser = new ParserHTML();
-parser.obterPaginas(html);*/
