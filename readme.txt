@@ -1,4 +1,4 @@
-Esse serviço fica polando um bot do telegram esperando pelo comando /buscar. Ao receber,
+Serviço fica polando um bot do telegram esperando pelo comando /buscar. Ao receber, o comando, realiza busca no endereço REST e envia os resultados para o usuário.
 
 
 Variáveis que precisam ser setadas:
