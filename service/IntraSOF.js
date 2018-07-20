@@ -17,14 +17,14 @@ class IntraSOF{
         };
         let paginas = [];
 
-        await this._clientGet(client, paginas, "https://intrasof/wiki/rest/wikis/xwiki/search", args);
+        await this._clientGet(client, paginas, process.env.URLRESTWIKI, args);
 
         return paginas;
     }
 
     _clientGet(client, paginas, url, args){
         return new Promise((resolve, reject) =>{
-            client.get("https://intrasof/wiki/rest/wikis/xwiki/search", args, (data, response) => {
+            client.get(url, args, (data, response) => {
                 resolve( 
                     data.searchResults.forEach((resultado) => {
                         let msg = resultado.title + "\n";                        
@@ -41,7 +41,7 @@ class IntraSOF{
 
     async buscarHTML(termoABuscar) { 
         var options = {
-            url: "http://intrasof/wiki/bin/Main/Search",
+            url: process.env.URLBUSCAHTML,
             qs: {text: termoABuscar},
             connection: {
                 rejectUnauthorized: false

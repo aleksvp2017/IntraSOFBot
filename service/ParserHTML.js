@@ -13,7 +13,7 @@ class ParserHTML{
                     var elementosResultantesDaBusca = select(dom, '.search-result-title');
                     var linksDosElementos = select(elementosResultantesDaBusca, 'a');
                     linksDosElementos.forEach((linkDosElementos) => {
-                        linksFinais.push('https://intrasof/' + linkDosElementos.attribs['href']);
+                        linksFinais.push(URLBASEBUSCAHTML + linkDosElementos.attribs['href']);
                     });
                     var currentPage = select(dom, '.currentPage');
                     var proximasPaginas = select(elementosResultantesDaBusca, 'a');
