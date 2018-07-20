@@ -29,13 +29,17 @@ class IntraSOF{
                     data.searchResults.forEach((resultado) => {
                         let msg = resultado.title + "\n";                        
                         resultado.links.forEach((link) => {
-                            msg += link.href + + "\n";
+                            msg += this._montarURLHTML(link.href) + "\n";
                         });
                         paginas.push(msg);
                     }));     
                 }
             );    
         });
+    }
+
+    _montarURLHTML(urlRest){
+        return urlRest.replace("/rest/wikis/xwiki/spaces/", "/bin/").replace("/pages","");
     }
         
 
